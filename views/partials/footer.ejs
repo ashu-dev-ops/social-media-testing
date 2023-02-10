@@ -1,0 +1,12 @@
+<script>
+
+const uploadfile = document.querySelector(".uploadfile");
+const preview = document.querySelector(".preview");
+uploadfile.addEventListener("change", function (e) {
+    preview.src = URL.createObjectURL(e.target.files[0]);
+});
+</script>
+
+
+</body>
+</html>

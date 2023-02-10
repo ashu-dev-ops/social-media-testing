@@ -1,0 +1,31 @@
+<%- include('./partials/header')%>
+
+<div class="nav-bar-time-line"><%- include('./partials/navigation')%></div>
+<div class="homepage-container-2">
+  <div class="create-post-container">
+    <form action="/c" method="POST" enctype="multipart/form-data">
+      <div class="left">
+        <input
+          type="file"
+          class="uploadfile"
+          name="multimedia"
+          onerror="this.style.display='none'"
+        />
+        <br />
+        <img src="" class="preview" alt="" />
+      </div>
+      <div class="right">
+        <input type="text" placeholder="Title" name="title" /> <br />
+
+        <textarea
+          name="content"
+          rows="10"
+          placeholder="enter text here..."
+        ></textarea>
+
+        <button>share</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('./partials/footer')%>

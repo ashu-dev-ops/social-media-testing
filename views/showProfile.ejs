@@ -1,0 +1,33 @@
+<%- include('./partials/header')%>
+
+<div class="nav-bar-time-line"><%- include('./partials/navigation')%></div>
+<div class="homepage-container-3">
+  <div class="p2-one">
+    <img
+      height="150"
+      class="preview"
+      onclick="changeImage()"
+      src="/assets/<%= user.avatar %>"
+      alt="<%= user.avatar%>"
+    />
+    <div class="text-container">
+      <button>
+        <a href="/profile"> edit profile </a>
+      </button>
+      <h2><%= user.name%></h2>
+      <h3>city : <%=user.city%></h3>
+      <h3>Bio : <%=user.about%></h3>
+    </div>
+  </div>
+  <div class="p2-two">
+    <h4>your post</h4>
+    <div class="grid-container">
+      <% data.forEach(function(student) { %>
+      <div class="show-card">
+        <!-- <img src="" alt=""> -->
+        <img height="200" src="/assets/<%=student.multimedia %>" alt="" />
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>

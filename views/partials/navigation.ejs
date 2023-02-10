@@ -1,0 +1,45 @@
+<nav>
+  <% if(isloggedin) {%>
+  <a href="/timeline"> </a>
+  <% } else { %>
+  <a href="/">
+    <!-- <img class="nav-logo" src="/assets/logo.png" height="70" alt="logo" /> -->
+  </a>
+  <% } %> <% if(isloggedin) {%>
+  <a href="/timeline" class="nav-side-logo">
+    <img class="nav-logo" src="./images/logo-2.jpeg" height="70" alt="logo" />
+  </a>
+
+  <ul class="nav-side">
+    <li>
+      <img src="./images/profile-3.jpeg" alt="" />
+      <a href="/timeline">home</a>
+    </li>
+    <!-- <li><a href="/profile">Profile</a></li>
+    <li><a href="/reset-password">Reset Password</a></li>
+   
+    <li><a href="/delete-user">Delete Account</a></li> -->
+
+    <li>
+      <img src="./images/profile-one.jpeg" alt="" />
+      <a href="/create-post"> create post </a>
+    </li>
+    <li>
+      <img
+        class="nav-logo"
+        src="/assets/<%= user.avatar %>"
+        height="50"
+        alt="logo"
+      />
+      <!-- <a href="/profile">Profile</a> -->
+      <a href="/show-profile">Profile</a>
+    </li>
+    <li>
+      <img src="/images/log-out.png" alt="" />
+      <a href="/logout">Logout</a>
+    </li>
+    <!-- profile -->
+  </ul>
+
+  <% } %>
+</nav>

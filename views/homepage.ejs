@@ -1,0 +1,87 @@
+<%- include('./partials/header')%>
+<div class="container-time-line-page">
+  <div class="nav-bar-time-line"><%- include('./partials/navigation')%></div>
+  <div class="homepage-container">
+    <!-- <h1>Welcome to homepage</h1>
+    <h3>👋 <%= user.name %></h3>
+
+    <a title="Create Post" style="text-decoration: none" href="/create-post"
+      >➕</a
+    > -->
+    <div class="floating-profile">
+      <img src="/assets/<%= user.avatar %>" />
+      <h2><%=user.name%></h2>
+      <span>
+        <h3>Bio</h3>
+        :
+        <p><%=user.about%></p>
+      </span>
+      <span>
+        <h3>location</h3>
+        :
+        <p><%=user.city%></p>
+      </span>
+      <h3>trending topics</h3>
+      <div class="trending-topics">
+        <li>election</li>
+        <li>england vs india</li>
+        <li>kelara corruption case</li>
+        <li>modi</li>
+      </div>
+    </div>
+    <ol>
+      <% posts.forEach(function(post){ %>
+
+      <div class="time-line-card">
+        <div class="row-one">
+          <img
+            height="30"
+            width="30"
+            style="border-radius: 50%"
+            src="/assets/<%= post.postedBy.avatar%>"
+            alt=""
+          />
+          | <%= post.postedBy.name%>
+        </div>
+
+        <!-- <h3><%= post.title%></h3> -->
+        <!-- <p><%= post.content%></p> -->
+        <div class="row-two">
+          <% if(post.multimedia.includes(".mp4")) { %>
+          <video
+            controls
+            height="200"
+            src="/assets/<%= post.multimedia %>"
+          ></video>
+          <% } else if(post.multimedia.includes(".png") |
+          post.multimedia.includes(".jpg")){ %>
+          <img height="200" src="/assets/<%= post.multimedia %>" alt="" />
+          <% } else if(post.multimedia.includes(".mp3")){ %>
+          <audio controls src="/assets/<%= post.multimedia %>"></audio>
+          <% }%>
+        </div>
+
+        <div class="row-three">
+          <a href="/like/<%= post._id%>">
+            <img height="20px" src="./images/like.png" alt="" />
+          </a>
+          <br />
+          |<%= post.likes.length %> likes
+          <h3><%= post.title%></h3>
+          <!-- <a href="/dislike/<%= post._id%>"
+            ><%= post.dislikes.length %>
+            <img height="20px" src="./images/dislike.png" alt=""
+          /></a> -->
+        </div>
+
+        <!-- <%=post._id%> -->
+        <!-- <input type="text"> -->
+        <!-- <a href="/add-comment/<%=post._id%>">add comment</a> -->
+        <!-- video /audio / image -->
+      </div>
+
+      <%})%>
+    </ol>
+  </div>
+</div>
+<%- include('./partials/footer')%>

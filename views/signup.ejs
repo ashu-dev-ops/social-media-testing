@@ -1,0 +1,36 @@
+<%- include('./partials/footer')%> --> <%- include('./partials/header')%> <%-
+include('./partials/navigation')%>
+
+<div class="container-sign-in">
+  <div class="left">
+    <!-- <img class="back-ground-ing" src="./images/logo.png" alt="" /> -->
+    <img class="display-image-sign-in" src="./images/empty-screen.png" alt="" />
+    <img class="display-image-display" src="./images/sign-in-one.png" alt="" />
+  </div>
+  <div class="right">
+    <form action="/signup" method="post">
+      <img src="./images/logo-2.jpeg" alt="" />
+      <!-- <input type="text" placeholder="@johndoe" name="username" />
+      <input type="password" placeholder="********" name="password" />
+      <button class="main-button">Sign in</button> -->
+      <input type="text" placeholder="name" name="name" />
+      <input type="text" placeholder="username" name="username" />
+      <input type="email" placeholder="example@gamil.com" name="email" />
+      <input type="password" placeholder="********" name="password" />
+      <button>Sign up</button>
+      <div class="or">
+        <p>or</p>
+      </div>
+      <p>use it on app</p>
+      <!-- <p>
+        <a href="/forgot-password">Forgot password?</a>
+      </p> -->
+      <div class="">
+        <img src="./images/play-store.png" style="height: 40px" alt="" />
+        <img src="./images/micro-store.png" style="height: 40px" alt="" />
+      </div>
+    </form>
+    <div class="sign-up">already have an account <a href="/">Sign in</a></div>
+  </div>
+</div>
+<%- include('./partials/footer')%>
